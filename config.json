@@ -1,0 +1,70 @@
+{
+  "prefix": "-",
+  "credentials": {
+    "email": "",
+    "password": ""
+  },
+  "appStatePath": "./appstate.json",
+  "bot": {
+    "name": "Phoenix",
+    "version": "2.1.0",
+    "adminIDs": [
+      "61590560891542"
+    ],
+    "language": "en"
+  },
+  "features": {
+    "autoSaveAppState": true,
+    "autoSaveIntervalMs": 1800000,
+    "greetNewMembers": false,
+    "farewellMembers": false,
+    "antiSpam": true,
+    "antiSpamCooldownMs": 3000,
+    "logMessages": false
+  },
+  "humanSimulator": {
+    "enabled": true,
+    "presenceIntervalMs": 600000,
+    "typingIntervalMs": 900000,
+    "readIntervalMs": 420000,
+    "jitterMs": 90000,
+    "maxTypingMs": 4000,
+    "maxGroupsPerCycle": 2
+  },
+  "dashboard": {
+    "apiKey": "YQcn25VVqlbeBHfTopKF24hG0WoO8n5X",
+    "port": 3001
+  },
+  "messages": {
+    "greet": "أهلاً {name}! 👋 مرحباً بك في المجموعة.",
+    "farewell": "وداعاً {name} سنفتقدك! 👋",
+    "commandNotFound": "✗ الأمر '{cmd}' غير موجود.\nاكتب {prefix}help لعرض الأوامر.",
+    "errorOccurred": "⚠️ حدث خطأ أثناء تنفيذ الأمر. حاول مجدداً.",
+    "botRestarted": "✅ تمت استعادة جلسة البوت بنجاح!",
+    "noPermission": "✗ ليس لديك صلاحية لتنفيذ هذا الأمر.",
+    "groupOnly": "✗ هذا الأمر للمجموعات فقط.",
+    "adminOnly": "✗ هذا الأمر للمشرفين فقط."
+  },
+  "loginOptions": {
+    "online": true,
+    "selfListen": false,
+    "listenEvents": true,
+    "listenTyping": false,
+    "autoMarkRead": true,
+    "autoMarkDelivery": true,
+    "autoReconnect": true,
+    "simulateTyping": false,
+    "forceLogin": false,
+    "maxConcurrentRequests": 2,
+    "maxRequestsPerMinute": 18,
+    "requestCooldownMs": 3500
+  },
+  "rateLimit": {
+    "_comment": "Global API rate-limiting — tune these to avoid Facebook blocks.",
+    "maxRequestsPerWindow": 18,
+    "windowMs": 60000,
+    "minDelayBetweenMs": 1200,
+    "maxDelayBetweenMs": 3500,
+    "burstCooldownMs": 8000
+  }
+}

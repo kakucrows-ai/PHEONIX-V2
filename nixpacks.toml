@@ -1,0 +1,17 @@
+[phases.setup]
+  nixPkgs = ["ffmpeg", "git", "curl"]
+
+  [phases.install]
+  cmds = ["npm install --production"]
+
+  [phases.build]
+  cmds = [
+    "curl -fsSL https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp",
+    "chmod +x /usr/local/bin/yt-dlp",
+    "yt-dlp -U --no-colors 2>&1 || true",
+    "yt-dlp --version"
+  ]
+
+  [start]
+  cmd = "node start.js"
+  

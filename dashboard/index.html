@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phoenix — لوحة التحكم</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="mesh"></div>
+  <div class="ember" id="ember"></div>
+
+  <!-- LOGIN SCREEN -->
+  <div id="loginScreen" class="login-screen">
+    <div class="login-card glass">
+      <div class="login-logo">🔥</div>
+      <h1 class="login-title">Phoenix</h1>
+      <p class="login-sub">نظام التحكم المتقدم • v2.1.0</p>
+      <div class="form-group">
+        <label>مفتاح الوصول</label>
+        <input id="loginKey" type="password" placeholder="أدخل المفتاح السري…" autocomplete="off" onkeydown="if(event.key==='Enter')doLogin()" /> <!-- FIXED: added Enter key handler so pressing Enter submits login -->
+        <div id="loginError" class="login-error"></div>
+      </div>
+      <button id="loginBtn" class="btn primary" style="width:100%;margin-top:8px" onclick="doLogin()">دخول</button>
+    </div>
+  </div>
+
+  <!-- MAIN APP -->
+  <div id="app" class="hidden" style="flex-direction:column;min-height:100vh"> <!-- FIXED: removed display:none from inline style (conflicted with flex-direction); visibility now controlled by .hidden class in styles.css -->
+
+    <!-- TOPBAR -->
+    <div class="topbar">
+      <div class="brand">
+        <span class="brand-logo">🔥</span>
+        <div>
+          <div class="brand-title">Phoenix</div>
+          <div class="brand-sub">نظام التحكم المتقدم</div>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <span id="pillStatus" class="pill">⏳ تحميل…</span>
+        <span id="pillGroups" class="pill">— مجموعة</span>
+        <span id="pillUptime" class="pill">—</span>
+        <span id="pillMem" class="pill">RAM: —</span>
+        <button class="btn ghost" onclick="doLogout()">خروج</button>
+      </div>
+    </div>
+
+    <!-- TAB BAR -->
+    <div class="tabs" id="tabBar"></div>
+
+    <!-- CONTENT -->
+    <div id="content" class="content-area"></div>
+
+  </div>
+
+  <!-- TOAST -->
+  <div id="toast" class="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Session & secrets (NEVER commit these)
+appstate.json
+appstate.backup*.json
+.env
+.env.*
+
+# Runtime data (auto-generated)
+logs/
+data/
+backups/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Checksums & lock files (auto-generated, NEVER commit — cause session crash on mismatch)
+appstate.checksum.json
+appstate.*.json
+*.sha256
+*.lock
